@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Navidad, Gladys ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <style>
+    :root {
+      --rojo: #c94b4b;
+      --rosa: #f7b7c3;
+      --dorado: #d4af37;
+      --verde: #2f6f4e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 🌲 FONDO NAVIDEÑO */
+    body {
+      background:
+        linear-gradient(
+          rgba(255,240,245,0.85),
+          rgba(255,240,245,0.85)
+        ),
+        url("https://i.pinimg.com/736x/28/ba/ba/28babacf22a6cb0235d9969567fbb9d8.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      color: #5a2a2a;
+    }
+
+    /* LUCES */
+    .lights {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .light {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      animation: blink 2s infinite alternate;
+    }
+
+    .light:nth-child(odd) { background: var(--rojo); }
+    .light:nth-child(even) { background: var(--verde); }
+
+    @keyframes blink {
+      from { opacity: .4; }
+      to { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--rojo);
+      text-shadow: 0 0 10px var(--rosa);
+    }
+
+    /* CARRUSEL */
+    .swiper {
+      width: 90%;
+      max-width: 700px;
+      margin: 30px auto;
+      border-radius: 20px;
+      border: 3px solid var(--dorado);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    /* NOTAS */
+    .notes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .note {
+      width: 200px;
+      padding: 15px;
+      background: #fff8dc;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,.15);
+      animation: float 4s ease-in-out infinite;
+      backdrop-filter: blur(4px);
+    }
+
+    .note:nth-child(even) {
+      background: #fdeef1;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* CARTA */
+    .letter {
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fffaf0;
+      border: 4px solid var(--dorado);
+      border-radius: 20px;
+      animation: fadeIn 2s ease;
+      box-shadow: 0 15px 30px rgba(0,0,0,.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .letter h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--rojo);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MÚSICA */
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--rojo);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,.3);
+      z-index: 1000;
+    }
+
+    /* CORAZONES Y NIEVE */
+    .heart, .snow {
+      position: fixed;
+      top: -10px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart { color: #ff6b81; font-size: 18px; }
+    .snow { color: white; font-size: 12px; }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      .swiper-slide img { height: 250px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="lights">
+  <div class="light"></div><div class="light"></div><div class="light"></div>
+  <div class="light"></div><div class="light"></div>
+</div>
+
+<header>
+  <h1>Feliz Navidad, Gladys ❤️</h1>
+</header>
+
+<!-- 🎠 CARRUSEL (10 FOTOS) -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="foto1.jpg"></div>
+    <div class="swiper-slide"><img src="foto2.jpg"></div>
+    <div class="swiper-slide"><img src="foto3.jpg"></div>
+    <div class="swiper-slide"><img src="foto4.jpg"></div>
+    <div class="swiper-slide"><img src="foto5.jpg"></div>
+    <div class="swiper-slide"><img src="foto6.jpg"></div>
+    <div class="swiper-slide"><img src="foto7.jpg"></div>
+    <div class="swiper-slide"><img src="foto8.jpg"></div>
+    <div class="swiper-slide"><img src="foto9.jpg"></div>
+    <div class="swiper-slide"><img src="foto10.jpg"></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<section class="notes">
+  <div class="note">🐛💕 Te seguiría amando aunque fueras un gusanito.</div>
+  <div class="note">🏡✨ Nuestra casita crece fuerte y segura.</div>
+  <div class="note">🏝️💖 Valoro mi chozita en tu isla.</div>
+  <div class="note">🌸😍 Eres hermosa y espero que mi regalito reafirme nuestra relación.</div>
+  <div class="note">🧸💙 Saludos a mi nene Nico.</div>
+</section>
+
+<section class="letter">
+  <h2>Para ti, mi amor</h2>
+  <p>
+    Panamá, 24 de diciembre de 2025<br><br>
+    Hermosa Gladys:<br><br>
+    Hola, amor. Espero que te encuentres bien y disfrutes cada momento junto a tu familia en esta fecha tan importante que es la Navidad. No estoy segura de cómo la celebran en tu casa, pero estoy segura de que te divertirás con tus tías, abuelita y mami. Anhelo el día en el que pasemos la Navidad juntas porque considero que es extremadamente emocionante: la comida, los regalos, los villancicos y lo más esencial, el nacimiento del Niño Dios.<br><br>
+    Si bien en esta ocasión no estamos una al lado de la otra y son más de 340 kilómetros los que nos separan, te aseguro que no he dejado de pensar en ti. Cada vez que veo las bellísimas flores que me regalaste sobre la mesa, me acuerdo de ti; estás presente en nuestra casita. Tanto Blefaki como yo añoramos la calidez de tu linda risa y tus tiernas pequitas.<br><br>
+    Te deseo una feliz Navidad y estoy muy agradecida con Dios por el hecho de que formes parte de mi vida. Me has enseñado a sentir y entender el amor de una forma única y distinta. El mejor regalo que podrías haberme dado esta Navidad son todas las memorias y experiencias inolvidables junto a ti. Además, en mi cartita pedí tener muchas citas juntas.<br><br>
+    Te amo.<br><br>
+Att: Tu novia, Daniela Cornejo<br><br>
+P.D.: Santa me dijo que te lo enviara porque se quedó sin señal en el Polo Norte.
+  </p>
+</section>
+
+<!-- 🎶 MÚSICA -->
+<div class="music-player" onclick="toggleMusic()">🎶 Música</div>
+<audio id="music" autoplay muted loop>
+  <source src="TU_CANCION_NAVIDENA.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  new Swiper('.swiper', {
+    effect: 'fade',
+    autoplay: { delay: 3000 },
+    pagination: { el: '.swiper-pagination', clickable: true }
+  });
+
+  const music = document.getElementById("music");
+
+  function toggleMusic() {
+    if (music.paused) music.play();
+    else music.pause();
+  }
+
+  // activar sonido al primer click
+  document.addEventListener("click", () => {
+    music.muted = false;
+    music.play();
+  }, { once: true });
+
+  function create(symbol, className) {
+    const el = document.createElement("div");
+    el.className = className;
+    el.innerHTML = symbol;
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 10000);
+  }
+
+  setInterval(() => create("❤️", "heart"), 800);
+  setInterval(() => create("❄️", "snow"), 500);
+</script>
+
+</body>
+</html>
